@@ -1,0 +1,27 @@
+bread = int(raw_input("How many pieces of bread do you have?"))
+peanutbutter = int(raw_input("How many sandwiches-worth of PB do you have?"))
+jelly = int(raw_input("How many sandwiches-worth of jelly do you have?"))
+
+if bread == 2 and peanutbutter == 1 and jelly == 1 :
+    print "I can make a peanut butter sandwich!"
+
+elif bread >= 2 and peanutbutter >= 1 and jelly >= 1 :
+    sandwiches = min ((bread / 2), peanutbutter, jelly)
+    print "I can make", sandwiches ,"sandwiches"
+
+    b = float(bread % 2)
+ 
+    if b == 1.0 and (bread/2) < peanutbutter and (bread/2) < jelly:
+        print "and an open-faced sandwich!"
+    
+    if bread > jelly and peanutbutter > jelly: 
+        PBsand = min ((bread / 2), peanutbutter)
+        PBS = PBsand - sandwiches
+        if PBS > 0 :
+            print "and", PBS , "peanut butter sandwiches"
+    
+elif bread >= 2 and peanutbutter >= 1 and jelly == 0 :
+    print "I can make a peanut butter sandwich!"
+
+else :
+    print "Looks like I don't have a lunch today"
